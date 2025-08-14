@@ -1,0 +1,7 @@
+name: yasulin
+version: '1.0'
+main: org.yasu.yasulin.Yasulin
+api-version: '1.21'
+load: STARTUP
+authors: [ yasu ]
+description: my first ever plugin lmao disaster
