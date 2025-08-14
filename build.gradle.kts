@@ -20,6 +20,11 @@ dependencies {
 }
 
 tasks {
+    shadowJar {
+        archiveBaseName.set("yasulin")
+        archiveVersion.set("1.0")
+        archiveClassifier.set("")
+    }
     runServer {
         // Configure the Minecraft version for our task.
         // This is the only required configuration besides applying the plugin.
