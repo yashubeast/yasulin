@@ -5,3 +5,8 @@ api-version: '1.21'
 load: STARTUP
 authors: [ yasu ]
 description: my first ever plugin lmao disaster
+commands:
+  pearlshot:
+    description: give player the Pearl Shot bow
+  settings:
+    description: what should i put here
