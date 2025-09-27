@@ -1,20 +1,12 @@
 package org.yasu.yasulin
 
-import org.bukkit.Bukkit
-import org.bukkit.inventory.Inventory
 import org.bukkit.plugin.java.JavaPlugin
-import org.yasu.yasulin.commands.PearlShot
-import org.yasu.yasulin.commands.Settings
-import org.yasu.yasulin.listeners.InventoryClick
-import org.yasu.yasulin.listeners.InventoryClose
-import org.yasu.yasulin.listeners.ShootBow
-import java.util.UUID
+import org.yasu.yasulin.commands.CmdCustomitems
+import org.yasu.yasulin.commands.CmdSettings
+import org.yasu.yasulin.listeners.LisInventory
+import org.yasu.yasulin.listeners.LisItem
 
 class Yasulin : JavaPlugin() {
-
-    companion object {
-        val guiMap: MutableMap<UUID, Inventory> = mutableMapOf()
-    }
 
     override fun onEnable() {
         logger.info("loaded plugin")
@@ -24,15 +16,14 @@ class Yasulin : JavaPlugin() {
     }
 
     private fun registerCommands() {
-        getCommand("pearlshot")?.setExecutor(PearlShot())
-        getCommand("settings")?.setExecutor(Settings())
+        getCommand("customitems")?.setExecutor(CmdCustomitems())
+        getCommand("settings")?.setExecutor(CmdSettings())
         logger.info("loaded commands")
     }
 
     private fun registerListeners() {
-        server.pluginManager.registerEvents(ShootBow(), this)
-        Bukkit.getServer().pluginManager.registerEvents(InventoryClose(), this)
-        Bukkit.getServer().pluginManager.registerEvents(InventoryClick(), this)
+        server.pluginManager.registerEvents(LisItem(), this)
+        server.pluginManager.registerEvents(LisInventory(), this)
         logger.info("loaded listeners")
     }
 

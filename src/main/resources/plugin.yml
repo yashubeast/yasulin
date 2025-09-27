@@ -6,7 +6,7 @@ load: STARTUP
 authors: [ yasu ]
 description: my first ever plugin lmao disaster
 commands:
-  pearlshot:
-    description: give player the Pearl Shot bow
+  customitems:
+    description: custom items
   settings:
     description: what should i put here
